@@ -1,0 +1,17 @@
+{
+  "name": "viewcollection",
+  "repo": "apily/viewcollection",
+  "version": "0.0.1",
+  "description": "ViewCollection component",
+  "keywords": ["HTML", "DOM", "MVC", "view", "viewcollection"],
+  "scripts": ["index.js"],
+  "dependencies": {
+    "apily/collection": "*",
+    "apily/event-manager": "*",
+    "apily/delegate-manager": "*"
+  },
+  "development": {
+    "component/assert": "*"
+  },
+  "license": "MIT"
+}
