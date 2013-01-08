@@ -1,5 +1,5 @@
 var delegates = require('viewcollection');
-var Emitter = require('model');
+var Collection = require('collection');
 
 (function(){
   var el = document.getElementById('list-one');

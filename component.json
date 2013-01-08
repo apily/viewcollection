@@ -6,12 +6,11 @@
   "keywords": ["HTML", "DOM", "MVC", "view", "viewcollection"],
   "scripts": ["index.js"],
   "dependencies": {
-    "apily/collection": "*",
-    "apily/event-manager": "*",
-    "apily/delegate-manager": "*"
+    "component-mvc/collection": "*",
+    "component-mvc/event-manager": "*",
+    "component-mvc/delegate-manager": "*"
   },
   "development": {
-    "component/assert": "*"
   },
   "license": "MIT"
 }
