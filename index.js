@@ -4,7 +4,7 @@
  *
  * @copyright 2012 Enrico Marino and Federico Spini
  * @license MIT
- */ 
+ */
 
 /*
  * Expose `ViewCollection`
@@ -34,6 +34,7 @@ function ViewCollection(options) {
   if (!(this instanceof ViewCollection)) {
     return new ViewCollection(options);
   }
+  options = options || {};
   this.el = options.el || document.createElement('div');
   this.collection = options.collection || new Collection([]);
   this.events = delegates(this.el, this);
