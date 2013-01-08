@@ -18,21 +18,24 @@ module.exports = ViewCollection;
 
 var events = require('event-manager');
 var delegates = require('delegate-manager');
+var Collection = require('collection');
 
 /*
  * ViewCollection
  * Create a viewcollection.
  *
- * @param {Element} el element
- * @param {Collection} collection collection
+ * @param {Object} options options
+ * @param {Element} [options.el] element
+ * @param {Collection} [options.collection] collection
  * @return {ViewCollection} a viewcollection
  */
 
-function ViewModel(el, collection) {
-  if (!(this instanceof View)) return new View(el, collection);
-
-  this.el = el;
-  this.collection = collection;
-  this.events = delegates(el, this);
-  this.messages = events(collection, this);
+function ViewCollection(options) {
+  if (!(this instanceof ViewCollection)) {
+    return new ViewCollection(options);
+  }
+  this.el = options.el || document.createElement('div');
+  this.collection = options.collection || new Collection([]);
+  this.events = delegates(this.el, this);
+  this.messages = events(this.collection, this);
 }
