@@ -6,6 +6,7 @@
   "keywords": ["HTML", "DOM", "MVC", "view", "viewcollection"],
   "scripts": ["index.js"],
   "dependencies": {
+    "component-mvc/viewmodel": "*",
     "component-mvc/collection": "*",
     "component-mvc/event-manager": "*",
     "component-mvc/delegate-manager": "*"
