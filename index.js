@@ -19,6 +19,7 @@ module.exports = ViewCollection;
 var events = require('event-manager');
 var delegates = require('delegate-manager');
 var Collection = require('collection');
+var ViewModel = require('viewmodel');
 
 /*
  * ViewCollection
@@ -37,6 +38,13 @@ function ViewCollection(options) {
   options = options || {};
   this.el = options.el || document.createElement('div');
   this.collection = options.collection || new Collection([]);
+  this.collection.model = this.viewmodel;
   this.events = delegates(this.el, this);
   this.messages = events(this.collection, this);
 }
+
+/*
+ * Define the viewmodel constructor
+ */
+
+ViewCollection.prototype.viewmodel = ViewModel;
