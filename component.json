@@ -1,6 +1,6 @@
 {
   "name": "viewcollection",
-  "repo": "component-mvc/viewcollection",
+  "repo": "apily/viewcollection",
   "version": "0.0.1",
   "description": "ViewCollection component",
   "keywords": ["HTML", "DOM", "MVC", "view", "viewcollection"],
