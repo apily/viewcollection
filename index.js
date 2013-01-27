@@ -41,6 +41,7 @@ function ViewCollection(options) {
   this.collection.model = this.viewmodel;
   this.events = delegates(this.el, this);
   this.messages = events(this.collection, this);
+  this.viewmodels = [];
 }
 
 /*
@@ -48,3 +49,18 @@ function ViewCollection(options) {
  */
 
 ViewCollection.prototype.viewmodel = ViewModel;
+
+/*
+ * onadd
+ * Add a viewmodel to this viewcollection
+ * when a model is added to the binded collection
+ *
+ * @param {Model} model the added model
+ * @api public
+ */
+
+ViewCollection.prototype.onadd = function(model) {
+  var viewmodel = this.viewmodel(model);
+  this.viewmodels.push(viewmodel);
+  this.el.appendChild(viewmodel.el);
+};
