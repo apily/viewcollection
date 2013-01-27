@@ -60,7 +60,7 @@ ViewCollection.prototype.viewmodel = ViewModel;
  */
 
 ViewCollection.prototype.onadd = function(model) {
-  var viewmodel = this.viewmodel(model);
+  var viewmodel = this.viewmodel({model: model});
   this.viewmodels.push(viewmodel);
   this.el.appendChild(viewmodel.el);
 };
