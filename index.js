@@ -41,7 +41,7 @@ function ViewCollection(options) {
   this.collection.model = this.viewmodel;
   this.events = delegates(this.el, this);
   this.messages = events(this.collection, this);
-  this.viewmodels = [];
+  this.viewmodels = {};
 }
 
 /*
@@ -61,6 +61,21 @@ ViewCollection.prototype.viewmodel = ViewModel;
 
 ViewCollection.prototype.onadd = function(model) {
   var viewmodel = this.viewmodel({model: model});
-  this.viewmodels.push(viewmodel);
-  this.el.appendChild(viewmodel.el);
+  var id = viewmodel.id;
+  var el = viewmodel.el;
+  this.viewmodels[id] = viewmodel;
+  this.el.appendChild(el);
+};
+
+/*
+ * onremove
+ * Remove a viewmodel from this viewcollection
+ * when its model is removed from the binded collection
+ *
+ * @param {Model} model the removed model
+ * @api public
+ */
+
+ViewCollection.prototype.onremove = function(model) {
+
 };
