@@ -12,10 +12,10 @@
       "url": "federicospini.com"
     }
   ],
-  "homepage": "https://github.com/component-mvc/viewcollection",
+  "homepage": "https://github.com/apily/viewcollection",
   "repository": {
     "type": "git",
-    "url": "git://github.com/component-mvc/viewcollection.git"
+    "url": "git://github.com/apily/viewcollection.git"
   },
   "main": "index.js",
   "engines": {
