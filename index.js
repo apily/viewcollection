@@ -1,3 +1,4 @@
+
 /*
  * viewcollection
  * ViewCollection component
@@ -16,10 +17,9 @@ module.exports = ViewCollection;
  * Module dependencies
  */
 
-var events = require('event-manager');
-var delegates = require('delegate-manager');
-var Collection = require('collection');
+var View = require('view');
 var ViewModel = require('viewmodel');
+var Collection = require('collection');
 
 /*
  * ViewCollection
@@ -35,20 +35,34 @@ function ViewCollection(options) {
   if (!(this instanceof ViewCollection)) {
     return new ViewCollection(options);
   }
-  options = options || {};
-  this.el = options.el || document.createElement('div');
+  View.call(this, options);
   this.collection = options.collection || new Collection([]);
   this.collection.model = this.viewmodel;
-  this.events = delegates(this.el, this);
-  this.messages = events(this.collection, this);
+  this.listen(this.collection, this.messages);
   this.viewmodels = {};
 }
+
+/**
+ * Inherit from `View`
+ */
+
+ViewCollection.prototype = Object.create(View.prototype);
+ViewCollection.prototype.constructor = ViewCollection;
 
 /*
  * Define the viewmodel constructor
  */
 
 ViewCollection.prototype.viewmodel = ViewModel;
+
+/**
+ * messages
+ */
+
+ViewCollection.prototype.messages = {
+  "add": "onadd",
+  "remove": "onremove"
+};
 
 /*
  * onadd
