@@ -6,10 +6,9 @@
   "keywords": ["HTML", "DOM", "MVC", "view", "viewcollection"],
   "scripts": ["index.js"],
   "dependencies": {
+    "apily/view": "*",
     "apily/viewmodel": "*",
-    "apily/collection": "*",
-    "apily/event-manager": "*",
-    "apily/delegate-manager": "*"
+    "apily/collection": "*"
   },
   "development": {
   },
